@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación a Boda</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Video -->
+      <div class="video-container">
+        <video controls poster="img/poster_prueba2.jpeg">
+          <source src="media/Video Invitacion 1.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <!-- Mensaje inicial -->
+      <div>
+        <h1>¡Nos Casamos!</h1>
+        <p>
+          Nuestro amor ha crecido y fortalecido desde el primer día que nos
+          encontramos, y hoy nos llena de alegría dar este gran paso con la
+          bendición de Dios. Después de nuestro tiempo juntos, hemos decidido
+          unir nuestras vidas en matrimonio y celebrar este momento especial con
+          las personas
+        </p>
+      </div>
+
+      <!-- Temporizador -->
+      <div class="countdown-wrapper">
+        <div class="countdown-container">
+          <h2>FALTAN</h2>
+          <br />
+          <div id="countdown">
+            <div class="time-box">
+              <span class="time" id="days">00</span>
+              <span class="label">Días</span>
+            </div>
+            <div class="time-box">
+              <span class="time" id="hours">00</span>
+              <span class="label">Horas</span>
+            </div>
+            <div class="time-box">
+              <span class="time" id="minutes">00</span>
+              <span class="label">Minutos</span>
+            </div>
+            <div class="time-box">
+              <span class="time" id="seconds">00</span>
+              <span class="label">Segundos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Img degrade -->
+      <div class="torn-image">
+        <img src="img/foto_dregrade.png" alt="Efecto rasgado" />
+      </div>
+
+      <!-- Itinerario -->
+      <div class="itinerary-container">
+        <h2 class="section-title">Itinerario</h2>
+        <div class="itinerary-image">
+          <img src="img/itinerario.png" alt="Imagen del itinerario" />
+        </div>
+      </div>
+
+      <!-- Direcciones -->
+      <section class="directions-section">
+        <h2 class="section-title">Direcciones</h2>
+        <br />
+        <br />
+        <div class="direction-cards">
+          <!-- Tarjeta de la Iglesia -->
+          <div class="direction-card">
+            <i class="fas fa-church icon"></i>
+            <!-- Icono de Iglesia -->
+            <h3>Iglesia San Sebastián / La Panadería</h3>
+            <h4>Calle XXX, Barrio XXX</h4>
+            <a
+              href="https://maps.app.goo.gl/aSty8jdn77jDz5iF6"
+              target="_blank"
+              class="map-button"
+            >
+              Ver en el mapa
+            </a>
+          </div>
+
+          <!-- Tarjeta de la Recepción -->
+          <div class="direction-card">
+            <i class="fas fa-building icon"></i>
+            <!-- Icono de Recepción -->
+            <h3>Centro Sinergia</h3>
+            <h4>Avenida #XXX</h4>
+            <a
+              href="https://maps.app.goo.gl/b2x7536V9tAfCaeTA"
+              target="_blank"
+              class="map-button"
+            >
+              Ver en el mapa
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <br />
+
+      <!-- Carrusel -->
+      <div class="carousel-container">
+        <div class="carousel">
+          <img src="img/carrusel1.jpeg" alt="Imagen 1" />
+          <img src="img/carrusel2.jpeg" alt="Imagen 2" />
+          <img src="img/carrusel3.jpeg" alt="Imagen 3" />
+          <img src="img/carrusel4.jpeg" alt="Imagen 4" />
+          <img src="img/carrusel5.jpeg" alt="Imagen 5" />
+        </div>
+        <button id="prev"><</button>
+        <button id="next">></button>
+        <div class="indicators">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <br />
+      <br />
+
+      <!-- Detalles extra -->
+      <section id="detalles-boda" class="detalles-container">
+        <h2 class="detalles-titulo">Detalles Importantes</h2>
+
+        <div class="detalles-linea">
+          <!-- Vestimenta -->
+          <div class="detalle-item">
+            <div class="detalle-icono">👔</div>
+            <div class="detalle-contenido">
+              <p class="detalle-titulo">Código de vestimenta</p>
+              <h3 class="detalle-texto">
+                Queremos que te sientas cómodo y elegante. Sugerimos
+                <strong>vestimenta formal</strong>. ¡Vístete con tu mejor
+                estilo!
+              </h3>
+            </div>
+          </div>
+
+          <!-- Puntualidad -->
+          <div class="detalle-item">
+            <div class="detalle-icono">⏳</div>
+            <div class="detalle-contenido">
+              <p class="detalle-titulo">Llega a tiempo</p>
+              <h3 class="detalle-texto">
+                La ceremonia comenzará puntualmente, llega con anticipación.
+              </h3>
+            </div>
+          </div>
+
+          <!-- Clima -->
+          <div class="detalle-item">
+            <div class="detalle-icono">🧥</div>
+            <div class="detalle-contenido">
+              <p class="detalle-titulo">Clima</p>
+              <h3 class="detalle-texto">
+                El evento es al aire libre, trae un abrigo ligero.
+              </h3>
+            </div>
+          </div>
+
+          <!-- Actitud -->
+          <div class="detalle-item">
+            <div class="detalle-icono">😊</div>
+            <div class="detalle-contenido">
+              <p class="detalle-titulo">Actitud</p>
+              <h3 class="detalle-texto">
+                No olvides tu mejor sonrisa y muchas ganas de celebrar.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Confirmacion -->
+      <section id="confirmacion" class="confirmacion-container">
+        <div class="confirmacion-contenido">
+          <h2 class="confirmacion-titulo">
+            Nos haría felices contar contigo ✨
+          </h2>
+          <p class="confirmacion-texto">
+            Estamos organizando este día con todo nuestro amor, y queremos que
+            seas parte de esta historia inolvidable.
+            <span class="confirmacion-destacado">Confirma tu asistencia</span>
+            para que podamos esperarte con toda la alegría del mundo. ¡Será un
+            momento mágico que siempre recordaremos! 💖
+          </p>
+          <a
+            href="URL_DEL_CUESTIONARIO"
+            target="_blank"
+            class="confirmacion-boton"
+          >
+            💍 ¡Confirmar mi Asistencia! 💍
+          </a>
+        </div>
+      </section>
+
+      <!-- ✨ Sección de cierre de la invitación -->
+      <footer class="cierre-boda">
+        <div class="cierre-contenido">
+            <h2 class="despedida-texto">Gracias por ser parte de nuestra historia</h2>
+            <p class="despedida-texto">Nos vemos en el gran día para celebrar el amor juntos. 💕</p>
+            <div class="mensaje-final">¡Esperamos con ansias compartir este momento especial contigo! ✨</div>
+        </div>
+    </footer>
+    
+
+      <br />
+    </div>
+  </body>
+</html>

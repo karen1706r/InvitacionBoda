@@ -1,0 +1,780 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mantener el overflow oculto pero sin limitar el ancho */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Asegura que no haya elementos flotando */
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f8f8f8;
+  padding: 0px;
+  text-align: center;
+}
+
+.container,
+.video-container,
+.countdown-wrapper {
+  max-width: 100%; /* Se asegura de que los contenedores no sean más grandes */
+  overflow: hidden; /* Previene desbordamientos */
+}
+
+.container {
+  width: 95%; /* Evita que en pantallas pequeñas haya desbordamiento */
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  overflow: hidden; /* Asegura que no haya elementos desbordando */
+}
+
+/* Video */
+.video-container {
+  width: 95%; /* Evita que el video sea más ancho que la pantalla */
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Texto inicio */
+h1 {
+  font-family: "Parisienne", cursive;
+  font-size: clamp(32px, 5vw, 60px);
+  color: #9b812b;
+  margin: 12px auto -2px auto;
+}
+
+h4{
+  color: #1f6b94ca;
+}
+
+p {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(18px, 3vw, 28px);
+  line-height: 1.6;
+  font-family: "Parisienne", cursive;
+  color: #1f6b94ca;
+  font-weight: bold;
+  padding: 22px;
+}
+
+/* Temporizador */
+.countdown-wrapper {
+  position: relative;
+  width: 90vw; /* Aumenta el ancho en pantallas grandes */
+  max-width: 850px; /* Imagen más grande inicialmente */
+  height: auto;
+  min-height: 220px;
+  max-height: 280px;
+  margin: auto;
+  background: url("../img/temporizador5.png") no-repeat center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+/* Mantiene la configuración en pantallas pequeñas */
+@media (max-width: 600px) {
+  .countdown-wrapper {
+    width: 85vw;
+    height: auto;
+    min-height: 180px;
+    max-height: 230px;
+  }
+}
+
+.time-box {
+  min-width: 45px; /* Cuadros aún más compactos */
+  padding: 2px; /* Se ajusta el padding */
+}
+
+h2 {
+  font-size: clamp(16px, 3vw, 24px); /* Se ajusta el título */
+}
+
+.countdown-container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px; /* Reduce el ancho del contenido */
+  margin: auto;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(16px, 3vw, 28px); /* Reduce el tamaño del título */
+  color: #b09b55;
+  margin-bottom: 2px; /* Reduce espacio */
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 0.9vw; /* Espacio más reducido entre cajas */
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.time-box {
+  background: #fff8e1;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 30px; /* Más compacto */
+  max-width: 8vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time {
+  font-size: clamp(16px, 3vw, 25px); /* Reduce los números */
+  font-weight: bold;
+  color: #9b812b;
+}
+
+.label {
+  font-size: clamp(8px, 1.2vw, 12px); /* Reduce el tamaño de las etiquetas */
+  color: #7a6343;
+}
+
+@media (min-width: 1024px) {
+  .countdown-wrapper {
+    width: 90vw; /* Evita desbordes y mantiene buen tamaño */
+    max-width: 1200px; /* Asegura que no crezca demasiado */
+    min-height: 470px; /* Ajustamos la altura */
+    max-height: 300px;
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain; /* Evita deformaciones en la imagen */
+  }
+
+  .time-box {
+    width: 140px; /* Aumentamos el tamaño de los cuadros */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .time {
+    font-size: clamp(28px, 5vw, 45px); /* Aumentamos el tamaño de los números */
+  }
+
+  .label {
+    font-size: clamp(
+      14px,
+      2vw,
+      18px
+    ); /* Aumentamos el tamaño de las etiquetas */
+  }
+}
+
+
+/* Itinerario */
+.itinerary-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  position: absolute;
+  color: #9b812b; /* Color del texto */
+  font-size: 2.5rem; /* Tamaño del texto */
+  z-index: 10; /* Mantener el título sobre la imagen */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para mejor legibilidad */
+  margin: 0;
+
+  /* Ajustar la posición vertical */
+  top: 7%; /* Más cerca de la parte superior (ajusta el % a tu gusto) */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Corregir el centrado */
+  font-size: clamp(1.5rem, 5vw, 2.5rem); 
+}
+
+.itinerary-image {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px; /* Limita el tamaño máximo de la imagen */
+  margin: 25px auto; /* Centra la imagen horizontalmente */
+  border-radius: 20px; 
+}
+
+.itinerary-image img {
+  width: 100%;
+  height: auto;
+  mask-image: 
+    linear-gradient(to top, transparent, white 30%) , 
+    linear-gradient(to bottom, transparent, white 30%) , 
+    linear-gradient(to left, transparent, white 30%) , 
+    linear-gradient(to right, transparent, white 30%);
+  -webkit-mask-image: 
+    linear-gradient(to top, transparent, white 25%) , 
+    linear-gradient(to bottom, transparent, white 25%) , 
+    linear-gradient(to left, transparent, white 35%) , 
+    linear-gradient(to right, transparent, white 35%);
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
+}
+
+/* Direcciones */
+.directions-section {
+  position: relative;
+  width: 100vw; /* Ocupar todo el ancho de la pantalla */
+  padding: 5% 0;
+  overflow: hidden; /* Evitar cualquier scroll horizontal */
+  
+  /* Fondo con degradado arriba y abajo */
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%),
+    url('../img/mancha1.png'),
+    linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #5A002A;
+  text-align: center;
+}
+
+/* Título de la sección */
+.section-title {
+  font-size: 3rem;
+  color: #5A002A;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de las tarjetas */
+.direction-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas individuales */
+.direction-card {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.direction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Iconos */
+.icon {
+  width: 60px;
+  font-size: 40px;
+}
+
+/* Botón de mapa */
+.map-button {
+  background-color: #7A003A;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.map-button:hover {
+  background-color: #5A002A;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .direction-card {
+    width: 90%;
+  }
+}
+
+
+
+ /* Carrucel fotos */
+ .carousel-container {
+  position: relative;
+  width: 80%;
+  max-width: 550px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 10px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  min-width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Evitar imágenes previas/siguientes visibles */
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: white;
+  z-index: 2;
+}
+
+.carousel-container::before { left: 0; }
+.carousel-container::after { right: 0; }
+
+/* Flechas */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #ff006e;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+#prev { left: -40px; }
+#next { right: -40px; }
+
+/* Indicadores */
+.indicators {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: #bbb;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dot.active {
+  background: #ff006e;
+  transform: scale(1.2);
+}
+
+
+
+/* ------------------------------------------ */
+/* Contenedor Principal */
+.detalles-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Título */
+.detalles-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #7A003A;
+  margin-bottom: 30px;
+}
+
+/* Línea de Tiempo */
+.detalles-linea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 40px;
+}
+
+/* Línea Central */
+.detalles-linea::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #409a92;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+/* Elementos de la Línea */
+.detalle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* Alternar Lado de los Contenidos */
+.detalle-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+/* Iconos */
+.detalle-icono {
+  font-size: 2rem;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Cajas de Contenido */
+.detalle-contenido {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto Hover */
+.detalle-contenido:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de los Textos */
+.detalle-titulo {
+  font-size: 1.3rem;
+  color: #7A003A;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.detalle-texto {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 📱 RESPONSIVE para Celulares */
+@media (max-width: 600px) {
+  /* Línea de tiempo a la izquierda */
+  .detalles-linea::before {
+      left: 20px;
+  }
+
+  /* Iconos alineados a la izquierda */
+  .detalle-icono {
+      left: 10px;
+      transform: none;
+  }
+
+  /* Elementos en una sola columna */
+  .detalle-item {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+  }
+
+  /* Cajas ocupan todo el ancho */
+  .detalle-contenido {
+      width: calc(100% - 40px);
+      margin-left: 40px;
+  }
+}
+
+
+/* Confirmacion */
+/* 💎 Contenedor más compacto */
+.confirmacion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 25px; /* 🔹 MENOS PADDING */
+  background: linear-gradient(135deg, #fffafc, #ffedf5);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 700px; /* 🔹 MÁS ESTRECHO */
+  margin: 50px auto; /* 🔹 MENOS MARGEN */
+  border: 2px solid #ff93b5;
+  position: relative;
+  overflow: hidden;
+  animation: slideUpFade 1s ease-out;
+}
+
+/* 🌟 Contenido */
+.confirmacion-contenido {
+  max-width: 650px;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInScale 1.2s ease-out 0.3s forwards;
+}
+
+/* 🎀 Título más compacto */
+.confirmacion-titulo {
+  font-size: 2.2rem; /* 🔹 MÁS PEQUEÑO */
+  color: #7A003A;
+  font-weight: bold;
+  margin-bottom: 15px; /* 🔹 MENOS ESPACIO */
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+/* 📜 Texto con menos espacio */
+.confirmacion-texto {
+  font-size: 1.2rem; /* 🔹 MÁS PEQUEÑO */
+  color: #5A002A;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.6; /* 🔹 MÁS COMPACTO */
+}
+
+/* 💍 Botón más pequeño */
+.confirmacion-boton {
+  display: inline-block;
+  padding: 12px 35px; /* 🔹 MENOS TAMAÑO */
+  font-size: 1.4rem; /* 🔹 MÁS PEQUEÑO */
+  color: white;
+  background: linear-gradient(90deg, #ff1493, #7A003A);
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 🎀 Efecto hover más suave */
+.confirmacion-boton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 📱 Ajustes en móviles */
+@media (max-width: 768px) {
+  .confirmacion-container {
+      padding: 40px 20px;
+      max-width: 90%;
+  }
+  .confirmacion-titulo {
+      font-size: 1.8rem;
+  }
+  .confirmacion-texto {
+      font-size: 1.1rem;
+  }
+  .confirmacion-boton {
+      font-size: 1.2rem;
+      padding: 10px 30px;
+  }
+}
+
+/* 🌟 Animaciones */
+@keyframes slideUpFade {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+
+/* ✨ Opción 1: Brillo elegante */
+@keyframes glowBorder {
+  0% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 20, 147, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.3); }
+}
+
+/* 💎 Opción 2: Flotante suave */
+@keyframes floatEffect {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 💗 Opción 3: Latido romántico */
+@keyframes heartbeat {
+  0% { transform: scale(0.2); }
+  40% { transform: scale(0.06); } /* Un cambio muy leve */
+  60% { transform: scale(0.2); }
+  100% { transform: scale(0.06); }
+}
+
+/* Aplica la animación deseada */
+.confirmacion-container {
+  /*animation: glowBorder 3s infinite ease-in-out;   */
+   animation: floatEffect 4s infinite ease-in-out; 
+  /* animation: heartbeat 3.5s infinite ease-in-out; */
+}
+
+
+/* Es el gran dia */
+/* 🌸 Estilo del mensaje final */
+.gran-dia {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #1f7978; /* Un rosa más elegante */
+  text-align: center;
+  padding: 20px;
+  animation: glow 2s infinite alternate, fadeIn 1.5s ease-out, heartbeat 2.8s infinite;
+}
+
+/* ✨ Animación de brillo más sutil */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #ff66b2, 0 0 15px #9b812b; }
+  100% { text-shadow: 0 0 10px #1bbe8a, 0 0 20px #ff1493; }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* 🎀 Animación de aparición */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+
+/* 🎉 Confetti animado */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 🌈 Confetti individual */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: hsl( var(--hue), 100%, 70%);
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+/* ✨ Animación del confetti cayendo */
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0); }
+  100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+
+
+/* Cierre */
+.cierre-boda {
+  position: relative;
+  background: url('../img/cierre.jpeg') no-repeat center center;
+  background-size: cover;
+  padding: 50px 20px;
+  text-align: center;
+  color: #5A002A; /* Color de texto en armonía */
+  font-family: 'Dancing Script', cursive; /* Un toque elegante */
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+/* Efecto de transparencia sobre la imagen */
+.cierre-boda::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* Ajusta la opacidad aquí */
+  z-index: 1;
+}
+
+/* Asegurar que el contenido se muestre encima del fondo */
+.cierre-contenido {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilo especial para el mensaje final */
+.mensaje-final {
+  font-size: 22px;
+  font-weight: bold;
+  color: #7A003A;
+}
