@@ -9,14 +9,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <br />
     <div class="container">
       <!-- Video -->
       <div class="video-container">
-        <video controls poster="img/poster_prueba2.jpeg">
-          <source src="media/Video Invitacion 1.mp4" type="video/mp4" />
+        <video controls poster="img/ImgPortadaVideo.jpg">
+          <source src="media/Video.mp4" type="video/mp4" />
           Tu navegador no soporta el video.
         </video>
       </div>
@@ -63,9 +70,15 @@
         </div>
       </div>
 
+      <br />
+
       <!-- Img degrade -->
       <div class="torn-image">
-        <img src="img/foto_dregrade.png" alt="Efecto rasgado" />
+        <img
+          src="img/Deg3.png"
+          alt="Efecto rasgado"
+          style="width: 300px; height: auto; display: block; margin: 0 auto"
+        />
       </div>
 
       <!-- Itinerario -->
@@ -84,10 +97,9 @@
         <div class="direction-cards">
           <!-- Tarjeta de la Iglesia -->
           <div class="direction-card">
-            <i class="fas fa-church icon"></i>
+            <i class="fas fa-ring icon"></i>
             <!-- Icono de Iglesia -->
             <h3>Iglesia San Sebastián / La Panadería</h3>
-            <h4>Calle XXX, Barrio XXX</h4>
             <a
               href="https://maps.app.goo.gl/aSty8jdn77jDz5iF6"
               target="_blank"
@@ -99,10 +111,9 @@
 
           <!-- Tarjeta de la Recepción -->
           <div class="direction-card">
-            <i class="fas fa-building icon"></i>
+            <i class="fas fa-map-marker-alt icon"></i>
             <!-- Icono de Recepción -->
             <h3>Centro Sinergia</h3>
-            <h4>Avenida #XXX</h4>
             <a
               href="https://maps.app.goo.gl/b2x7536V9tAfCaeTA"
               target="_blank"
@@ -118,24 +129,28 @@
       <br />
 
       <!-- Carrusel -->
-      <div class="carousel-container">
-        <div class="carousel">
-          <img src="img/carrusel1.jpeg" alt="Imagen 1" />
-          <img src="img/carrusel2.jpeg" alt="Imagen 2" />
-          <img src="img/carrusel3.jpeg" alt="Imagen 3" />
-          <img src="img/carrusel4.jpeg" alt="Imagen 4" />
-          <img src="img/carrusel5.jpeg" alt="Imagen 5" />
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="carrusel/1.png" alt="Imagen 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="carrusel/10.jpg" alt="Imagen 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="carrusel/2.jpg" alt="Imagen 3" />
+          </div>
+          <div class="swiper-slide">
+            <img src="carrusel/3.jpg" alt="Imagen 4" />
+          </div>
         </div>
-        <button id="prev"><</button>
-        <button id="next">></button>
-        <div class="indicators">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
       </div>
+
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
       <br />
       <br />
@@ -146,14 +161,43 @@
 
         <div class="detalles-linea">
           <!-- Vestimenta -->
+          <!-- Vestimenta -->
           <div class="detalle-item">
             <div class="detalle-icono">👔</div>
             <div class="detalle-contenido">
-              <p class="detalle-titulo">Código de vestimenta</p>
+              <p class="detalle-titulo">Etiqueta</p>
               <h3 class="detalle-texto">
-                Queremos que te sientas cómodo y elegante. Sugerimos
-                <strong>vestimenta formal</strong>. ¡Vístete con tu mejor
-                estilo!
+                ¡Vístete con tu mejor estilo, pero asegúrate de que sea formal!
+                <br />
+               Vestido largo para damas y traje para caballeros. 
+               <br>Evita
+                usar estos colores, están reservados para los protagonistas del
+                gran día:<br />
+
+                <div class="colores-restringidos">
+                  <div class="paleta-colores">
+                    <div
+                      class="color-bloque"
+                      style="background-color: #f81d6f"
+                      title="#f81d6f"
+                    ></div>
+                    <div
+                      class="color-bloque"
+                      style="background-color: #fd8129"
+                      title="#fd8129"
+                    ></div>
+                    <div
+                      class="color-bloque"
+                      style="background-color: #113e5d"
+                      title="#113e5d"
+                    ></div>
+                    <div
+                      class="color-bloque"
+                      style="background-color: #85d8d0"
+                      title="#85d8d0"
+                    ></div>
+                  </div>
+                </div>
               </h3>
             </div>
           </div>
@@ -196,22 +240,20 @@
       <!-- Confirmacion -->
       <section id="confirmacion" class="confirmacion-container">
         <div class="confirmacion-contenido">
-          <h2 class="confirmacion-titulo">
-            Nos haría felices contar contigo ✨
-          </h2>
+          <h2 class="confirmacion-titulo">Nos haría felices contar contigo</h2>
           <p class="confirmacion-texto">
             Estamos organizando este día con todo nuestro amor, y queremos que
             seas parte de esta historia inolvidable.
             <span class="confirmacion-destacado">Confirma tu asistencia</span>
             para que podamos esperarte con toda la alegría del mundo. ¡Será un
-            momento mágico que siempre recordaremos! 💖
+            momento mágico que siempre recordaremos!
           </p>
           <a
-            href="URL_DEL_CUESTIONARIO"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdjS6XwiVfoRvwfHrteRLP6tVbdIjyiO7KHKqxXf3K2BpcXIQ/viewform?usp=header"
             target="_blank"
             class="confirmacion-boton"
           >
-          ✨ ¡Confirmar mi Asistencia! ✨
+            ¡Confirmar mi Asistencia!
           </a>
         </div>
       </section>
@@ -219,14 +261,33 @@
       <!-- ✨ Sección de cierre de la invitación -->
       <footer class="cierre-boda">
         <div class="cierre-contenido">
-            <h2 class="despedida-texto">Gracias por ser parte de nuestra historia</h2>
-            <p class="despedida-texto">Nos vemos en el gran día para celebrar el amor juntos. 💕</p>
-            <div class="mensaje-final">¡Esperamos con ansias compartir este momento especial contigo! ✨</div>
+          <h2 class="despedida-texto">
+            Gracias por ser parte de nuestra historia
+          </h2>
+          <p>Nos vemos en el gran día para celebrar el amor juntos.</p>
+          <div class="mensaje-final">
+            ¡Esperamos con ansias compartir este momento especial contigo!
+          </div>
         </div>
-    </footer>
-    
 
-      <br />
+        <!-- Corazón fijo principal -->
+        <svg
+          class="corazon-svg"
+          viewBox="0 0 24 24"
+          width="48"
+          height="48"
+          fill="#1f6b94ca"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+          />
+        </svg>
+      </footer>
     </div>
+    <br />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>

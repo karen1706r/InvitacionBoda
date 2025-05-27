@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (timeLeft <= 0) {
       document.getElementById("countdown").innerHTML = `
-        <div class="gran-dia">¡Es el gran día! 🎉</div>
+        <div class="gran-dia">¡Es el gran <br> día!</div>
       `;
 
       document.querySelector(".countdown-container h2").style.display = "none";
@@ -52,59 +52,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //Carrusel fotos
-const carousel = document.querySelector('.carousel');
-const images = document.querySelectorAll('.carousel img');
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
-const dots = document.querySelectorAll('.dot');
-
-let index = 0;
-let autoPlayInterval;
-
-// Actualiza el carrusel
-function updateCarousel() {
-  carousel.style.transform = `translateX(${-index * 100}%)`;
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-}
-
-// Avanzar automáticamente cada 3 segundos
-function startAutoPlay() {
-  autoPlayInterval = setInterval(() => {
-    index = (index + 1) % images.length;
-    updateCarousel();
-  }, 2000);
-}
-
-// Detener autoplay temporalmente al interactuar
-function stopAutoPlay() {
-  clearInterval(autoPlayInterval);
-  setTimeout(startAutoPlay, 5000); // Reinicia después de 5s
-}
-
-// Eventos de los botones
-prevButton.addEventListener('click', () => {
-  stopAutoPlay();
-  index = index > 0 ? index - 1 : images.length - 1;
-  updateCarousel();
+const swiper = new Swiper(".mySwiper", {
+  loop: true,
+  spaceBetween: 20,
+  centeredSlides: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: false,
+  navigation: false,
+  effect: "slide",
+  speed: 800,
+  observer: true,
+  observeParents: true,
 });
 
-nextButton.addEventListener('click', () => {
-  stopAutoPlay();
-  index = (index + 1) % images.length;
-  updateCarousel();
-});
-
-// Eventos de los puntos
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    stopAutoPlay();
-    index = i;
-    updateCarousel();
-  });
-});
-
-// Iniciar autoplay al cargar la página
-startAutoPlay();
 
