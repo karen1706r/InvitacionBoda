@@ -23,7 +23,7 @@
       <!-- Video -->
       <div class="video-container">
         <video controls poster="img/ImgPortadaVideo.jpg" loading="lazy">
-          <source src="media/Video.mp4" type="video/mp4" />
+          <source src="media/VideoF.mp4" type="video/mp4" />
           Tu navegador no soporta el video.
         </video>
       </div>
@@ -86,13 +86,17 @@
       <div class="itinerary-container">
         <h2 class="section-title">Itinerario</h2>
         <div class="itinerary-image">
-          <img src="img/itinerario.png" alt="Imagen del itinerario" loading="lazy"/>
+          <img
+            src="img/itinerario.png"
+            alt="Imagen del itinerario"
+            loading="lazy"
+          />
         </div>
       </div>
 
       <!-- Direcciones -->
       <section class="directions-section">
-        <h2 class="section-title">Direcciones</h2>
+        <h2 class="section-title">Locaciones</h2>
         <br />
         <br />
         <div class="direction-cards">
@@ -132,14 +136,14 @@
       <!-- Carrusel -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <!-- <div class="swiper-slide">
             <img src="carrusel/1.png" alt="Imagen 1" loading="lazy"/>
+          </div> -->
+          <div class="swiper-slide">
+            <img src="carrusel/10.jpg" alt="Imagen 2" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="carrusel/10.jpg" alt="Imagen 2" loading="lazy"/>
-          </div>
-          <div class="swiper-slide">
-            <img src="carrusel/2.jpg" alt="Imagen 3" loading="lazy"/>
+            <img src="carrusel/2.jpg" alt="Imagen 3" loading="lazy" />
           </div>
           <div class="swiper-slide">
             <img src="carrusel/3.jpg" alt="Imagen 4" loading="lazy" />
@@ -170,33 +174,59 @@
               <h3 class="detalle-texto">
                 ¡Vístete con tu mejor estilo, pero asegúrate de que sea formal!
                 <br />
-               Vestido largo para damas y traje para caballeros. 
-               <br>Evita
-                usar estos colores, están reservados para los protagonistas del
-                gran día:<br />
+                Vestido largo para damas y traje para caballeros.
+                <br />Evita usar estos colores, están reservados para los
+                protagonistas del gran día:<br />
 
                 <div class="colores-restringidos">
                   <div class="paleta-colores">
-                    <div
-                      class="color-bloque"
-                      style="background-color: #f81d6f"
-                      title="#f81d6f"
-                    ></div>
-                    <div
-                      class="color-bloque"
-                      style="background-color: #fd8129"
-                      title="#fd8129"
-                    ></div>
-                    <div
-                      class="color-bloque"
-                      style="background-color: #113e5d"
-                      title="#113e5d"
-                    ></div>
-                    <div
-                      class="color-bloque"
-                      style="background-color: #85d8d0"
-                      title="#85d8d0"
-                    ></div>
+                    <svg
+                      class="corazon-svg"
+                      viewBox="0 0 24 24"
+                      fill="#85d8d0"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      />
+                    </svg>
+
+                    <svg
+                      class="corazon-svg"
+                      viewBox="0 0 24 24"
+                      fill="#fd8129"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      />
+                    </svg>
+
+                    <svg
+                      class="corazon-svg"
+                      viewBox="0 0 24 24"
+                      fill="#f81d6f"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      />
+                    </svg>
+
+                    <svg
+                      class="corazon-svg"
+                      viewBox="0 0 24 24"
+                      fill="#113e5d"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      />
+                    </svg>
                   </div>
                 </div>
               </h3>
@@ -220,7 +250,8 @@
             <div class="detalle-contenido">
               <p class="detalle-titulo">Clima</p>
               <h3 class="detalle-texto">
-                El evento es al aire libre, trae un abrigo ligero.
+                El evento es al aire libre, en un ambiente campestre. Trae un
+                abrigo ligero.
               </h3>
             </div>
           </div>
@@ -257,6 +288,51 @@
             ¡Confirmar mi Asistencia!
           </a>
         </div>
+      </section>
+
+      <!-- Pagos -->
+      <section class="digital-gifts-section">
+        <h2 class="detalles-titulo2">Lluvia de sobres <span>💌</span></h2>
+        <p class="confirmacion-texto">
+          Sabemos que a veces la memoria nos falla (¡a nosotros también nos
+          pasa! 😅), así que, si prefieres facilitar el proceso, puedes hacernos
+          llegar tu regalo de la siguiente manera:
+        </p>
+
+        <div class="transfer-item">
+          <p class="transfer-title">Desde Colombia:</p>
+          <h3 class="transfer-info">
+            Nequi: <a href="tel:+573023883744">3023883744</a> (a nombre de
+            Beliji Lopez)
+          </h3>
+        </div>
+
+        <div class="transfer-item">
+          <p class="transfer-title">Desde el exterior:</p>
+          <h3 class="transfer-info">
+            Mediante transferencia directa a la cuenta bancaria en EE. UU.<br />
+            <strong>Routing number (ACH):</strong> 103913434<br />
+            <strong>Routing number (Wire):</strong> 103913434<br />
+            <strong>Nombre:</strong> VICTOR ENRIQUE RODRIGUEZ MUÑOZ<br />
+            <strong>Banco:</strong> Regent Bank 7136 S. Yale Ave., Ste 100,
+            Tulsa, OK 74136, US<br />
+            <strong>Número de cuenta:</strong> 123799299173
+          </h3>
+        </div>
+
+        <div class="transfer-item">
+          <p class="transfer-title">Paypal:</p>
+          <h3 class="transfer-info">
+            <a href="https://paypal.me/vrodmz" target="_blank"
+              >https://paypal.me/vrodmz</a
+            >
+          </h3>
+        </div>
+
+        <p class="thank-you">
+          ¡Gracias por acompañarnos de la manera que elijas y ser parte de
+          nuestra <span>historia</span>! 💕
+        </p>
       </section>
 
       <!-- ✨ Sección de cierre de la invitación -->
