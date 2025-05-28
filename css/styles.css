@@ -217,7 +217,7 @@ h2 {
   margin: 0;
 
   /* Ajustar la posición vertical */
-  top: 7%; /* Más cerca de la parte superior (ajusta el % a tu gusto) */
+  top: 5%; /* Más cerca de la parte superior (ajusta el % a tu gusto) */
   left: 50%; /* Centrado horizontalmente */
   transform: translateX(-50%); /* Corregir el centrado */
   font-size: clamp(1.5rem, 5vw, 2.5rem);
@@ -234,14 +234,6 @@ h2 {
 .itinerary-image img {
   width: 100%;
   height: auto;
-  mask-image: linear-gradient(to top, transparent, white 30%),
-    linear-gradient(to bottom, transparent, white 30%),
-    linear-gradient(to left, transparent, white 30%),
-    linear-gradient(to right, transparent, white 30%);
-  -webkit-mask-image: linear-gradient(to top, transparent, white 25%),
-    linear-gradient(to bottom, transparent, white 25%),
-    linear-gradient(to left, transparent, white 35%),
-    linear-gradient(to right, transparent, white 35%);
   -webkit-mask-composite: intersect;
   mask-composite: intersect;
 }
@@ -258,7 +250,6 @@ h2 {
   text-align: center;
   z-index: 0;
 }
-
 
 /* Fondo con imagen con opacidad */
 .directions-section::before {
@@ -311,13 +302,12 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  margin-left: auto;  /* cambia de 0.5cm a auto */
+  margin-left: auto; /* cambia de 0.5cm a auto */
   margin-right: auto; /* cambia de 1cm a auto */
   padding: 50px 0;
   max-width: 100%;
   box-sizing: border-box;
 }
-
 
 /* Tarjetas individuales */
 .direction-card {
@@ -488,45 +478,31 @@ h2 {
 .swiper {
   width: 100%;
   height: auto;
+  border-radius: 20px;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
 
 .swiper-slide img {
   width: 100%;
   height: auto;
-  display: block; /* evita espacios raros */
+  display: block;
   border-radius: 20px;
-  object-fit: contain; /* para que la imagen no se corte ni deforme */
+  object-fit: cover; /* Esto es lo normalito para móvil */
 }
 
-/* Ocultamos las flechas */
-.swiper-button-next,
-.swiper-button-prev {
-  display: none;
+/* 🧠 Aquí la magia para pantallas grandes */
+@media (min-width: 1024px) {
+  .swiper {
+    max-width: 900px; /* Reduce el tamaño del carrusel */
+  }
+
+  .swiper-slide img {
+    object-fit: contain; /* 👈 Aquí se ve completita la imagen sin recorte */
+    height: 500px; /* Le damos altura fija para que se acomode */
+  }
 }
-
-/* Dots responsivos y lindos */
-.swiper-pagination {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  /* No ponemos bottom fijo acá */
-}
-
-
-.swiper-pagination-bullet {
-  background: #ffb3d9;
-  opacity: 1;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px !important;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.swiper-pagination-bullet-active {
-  background: #ff007f;
-  transform: scale(1.3);
-}
-
 
 /* Detalles a tener en cuenta */
 /* Contenedor Principal */
@@ -681,7 +657,7 @@ h2 {
   display: inline-block;
   transform: rotate(-45deg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
   border-radius: 4px 4px 0 0;
 }
 
@@ -695,7 +671,7 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
 }
 
 .paleta-colores {
@@ -710,15 +686,13 @@ h2 {
   height: 32px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 }
 
 .corazon-svg:hover {
   transform: scale(1.3);
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
 }
-
-
 
 /* Confirmacion */
 /* 💎 Contenedor general con borde punteado y efecto flotante */
@@ -922,7 +896,8 @@ h2 {
 
 /* Parpadeo suave para que brille más */
 @keyframes flicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.9;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9));
   }
@@ -931,7 +906,6 @@ h2 {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
   }
 }
-
 
 /* Cierre */
 .cierre-boda {
@@ -960,7 +934,6 @@ h2 {
   }
 }
 
-
 /* Sección de Lluvia de Sobres */
 .digital-gifts-section {
   padding: 35px 25px;
@@ -971,7 +944,7 @@ h2 {
   max-width: 700px;
   margin: 30px auto;
   box-shadow: 0 8px 20px rgba(90, 0, 42, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Título principal */
@@ -1018,15 +991,15 @@ h2 {
 
 /* Info dentro de tarjeta */
 .transfer-info {
-  font-size: 0.9rem;          
-  color: #003434;            
-  font-weight: 400;           
-  font-family: 'Times New Roman', Times, serif; 
-  line-height: 1.4;           
-  letter-spacing: 0.03em;     
-  text-align: center;         
-  margin-top: 4px;            
-  margin-bottom: 10px;        
+  font-size: 0.9rem;
+  color: #003434;
+  font-weight: 400;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
 
 /* Links dentro de info */

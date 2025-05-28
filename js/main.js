@@ -59,13 +59,19 @@ const swiper = new Swiper(".mySwiper", {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true, // se pausa al pasar el mouse, mejora UX
   },
-  pagination: false,
-  navigation: false,
+  grabCursor: true, // se ve la manito al arrastrar, cute y útil
+  slidesPerView: "auto", // mejora el comportamiento responsivo
+  resistance: true,
+  resistanceRatio: 0.85, // hace que se sienta más suave al jalar
+  speed: 600, // le bajamos un poquito la velocidad para que no se trabe
   effect: "slide",
-  speed: 800,
   observer: true,
   observeParents: true,
+  touchRatio: 1.2, // aumenta la sensibilidad del swipe
+  longSwipesRatio: 0.3, // hace que reconozca mejor los swipes cortitos
+  threshold: 10, // menos sensibilidad al iniciar swipe, evita trabones
 });
 
 
